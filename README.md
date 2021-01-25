@@ -1,3 +1,39 @@
+
+## Updated opencv so libs to fix no canary found issue
+
+```
+# ~/Library/Android/sdk/ndk/16.1.4479499/build/cmake
+$ tree -L 1
+.
+├── CMakeCache.android.initial.cmake  // card.io-Android-source/opencv
+├── android.toolchain.cmake           // ndk
+├── build_opencv.sh                   // card.io-Android-source/openc
+├── opencv-2.4.13.6                   //
+└── output
+
+$ ./build_opencv.sh
+
+output
+├── arm64-v8a
+│   ├── libopencv_core.so
+│   └── libopencv_imgproc.so
+├── armeabi-v7a
+│   ├── libopencv_core.so
+│   └── libopencv_imgproc.so
+├── x86
+│   ├── libopencv_core.so
+│   └── libopencv_imgproc.so
+└── x86_64
+    ├── libopencv_core.so
+    └── libopencv_imgproc.so
+```
+
+then copy output to card.io/src/main/jni/lib and rebuild the project,
+card.io/build/outputs/aar/card.io-release-5.5.2.aar
+
+
+======
+
 [![Build Status](https://travis-ci.org/card-io/card.io-Android-source.svg)](https://travis-ci.org/card-io/card.io-Android-source)
 
 [![card.io logo](https://raw.githubusercontent.com/card-io/press-kit/master/card_io_logo_200.png "card.io")](https://www.card.io)
